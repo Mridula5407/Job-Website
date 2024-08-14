@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Career Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight:700;
+        }
+        select, input[type="text"], input[type="number"], input[type="checkbox"], input[type="radio"] {
+            margin-top: 5px;
+            width: 100%;
+
+        }
+        select, input[type="text"],input[type="number"]{
+        height:2rem;
+        }
+        input[type="checkbox"], input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        .inline {
+            display: inline-block;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .checkbox-group label, .radio-group label {
+            width: 48%;
+            margin: 5px 1%;
+        }
+        .checkbox-group input[type="checkbox"], .radio-group input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        .submit-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: rgb(21, 123, 164);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: skyblue;
+        }
+    </style>
+<body>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h1>Career Profile</h1>
+
+    <label for="current-industry">Current industry</label>
+    <select name="Current" id="current-industry">
+        <option value="" disabled selected>Select Current Industry</option>
+        <option value="BPM">BPM</option>
+        <option value="Analytic/KPO/Research">Analytic/KPO/Research</option>
+        <option value="BPO/Call Centre">BPO/Call Centre</option>
+        <option value="IT services/Consulting">IT services/Consulting</option>
+        <option value="Technology">Technology</option>
+        <option value="Electronic Components/Semiconductors">Electronic Components/Semiconductors</option>
+        <option value="Electronic Manufacturing">Electronic Manufacturing</option>
+        <option value="Electronic Manufacturing Services(EMS)">Electronic Manufacturing Services(EMS)</option>
+        <option value="Emerging Technologies">Emerging Technologies</option>
+        <option value="3D Printing">3D Printing</option>
+        <option value="AI/ML">AI/ML</option>
+        <option value="AR/VR">AR/VR</option>
+        <option value="Blockchain">Blockchain</option>
+        <option value="Cloud">Cloud</option>
+        <option value="Cyber Security">Cyber Security</option>
+        <option value="Drones/Robotics">Drones/Robotics</option>
+        <option value="IoT">IoT</option>
+        <option value="Nanotechnology">Nanotechnology</option>
+        <option value="Hardware and Networking">Hardware and Networking</option>
+        <option value="Internet">Internet</option>
+        <option value="E-commerce">E-commerce</option>
+        <option value="OTT/Internet">OTT/Internet</option>
+        <option value="Software Product">Software Product</option>
+        <option value="Banking">Banking</option>
+        <option value="Asset Management Financial Services">Asset Management Financial Services</option>
+        <option value="Broking Financial Services">Broking Financial Services</option>
+        <option value="fintech payment">Fintech Payment</option>
+        <option value="Insurance">Insurance</option>
+        <option value="Investment Banking/Venture Capital/Private Equity">Investment Banking/Venture Capital/Private Equity</option>
+        <option value="NBFC">NBFC</option>
+        <option value="Micro Finance">Micro Finance</option>
+        <option value="Education/Training">Education/Training</option>
+        <option value="E-Learning/Edtech">E-Learning/Edtech</option>
+        <option value="Auto Components">Auto Components</option>
+        <option value="Tyre/Auto Components">Tyre/Auto Components</option>
+        <option value="Automobile">Automobile</option>
+        <option value="Automobile Dealers">Automobile Dealers</option>
+        <option value="Electric Vehicle(EV)">Electric Vehicle(EV)</option>
+        <option value="Building Material">Building Material</option>
+        <option value="Cement Building Material">Cement Building Material</option>
+        <option value="Ceramic Building Material">Ceramic Building Material</option>
+        <option value="Glass Building Material">Glass Building Material</option>
+        <option value="Chemicals">Chemicals</option>
+        <option value="Paint Chemicals">Paint Chemicals</option>
+        <option value="Defence & Aerospace">Defence & Aerospace</option>
+        <option value="Electrical Equipment">Electrical Equipment</option>
+        <option value="Fertilizer/Pesticides/Agro chemicals">Fertilizer/Pesticides/Agro chemicals</option>
+        <option value="Industrial Automation">Industrial Automation</option>
+        <option value="Industrial Equipment/Machinery">Industrial Equipment/Machinery</option>
+        <option value="Construction Equipment Industrial Equipment/Machinery">Construction Equipment Industrial Equipment/Machinery</option>
+        <option value="Machine Tools Industrial Equipment/Machinery">Machine Tools Industrial Equipment/Machinery</option>
+        <option value="Iron & Steel">Iron & Steel</option>
+        <option value="Metals and Mining">Metals and Mining</option>
+        <option value="Packaging and Containers">Packaging and Containers</option>
+        <option value="Petrochemicals/Plastic/Rubber">Petrochemicals/Plastic/Rubber</option>
+        <option value="Pulp & Paper">Pulp & Paper</option>
+        <option value="Aviation">Aviation</option>
+        <option value="Courier Logistic">Courier Logistic</option>
+        <option value="Logistic Tech Courier Logistic">Logistic Tech Courier Logistic</option>
+        <option value="Engineering & Construction">Engineering & Construction</option>
+        <option value="Oil & Gas">Oil & Gas</option>
+        <option value="Ports & Shipping">Ports & Shipping</option>
+        <option value="Shipbuilding">Shipbuilding</option>
+        <option value="Power">Power</option>
+        <option value="Hydro Power">Hydro Power</option>
+        <option value="Nuclear Power">Nuclear Power</option>
+        <option value="Solar Power">Solar Power</option>
+        <option value="Wind Power">Wind Power</option>
+        <option value="Railways">Railways</option>
+        <option value="Real Estate">Real Estate</option>
+        <option value="Co-working Real Estate">Co-working Real Estate</option>
+        <option value="Urban Transport">Urban Transport</option>
+        <option value="Water Treatment/Waste Management">Water Treatment/Waste Management</option>
+        <option value="Beauty & Personal Care">Beauty & Personal Care</option>
+        <option value="Beverage">Beverage</option>
+        <option value="Brewery/Distillery Beverage">Brewery/Distillery Beverage</option>
+        <option value="Consumer Electronic & Appliances">Consumer Electronic & Appliances</option>
+        <option value="Fitness & Wellness">Fitness & Wellness</option>
+        <option value="FMCG">FMCG</option>
+        <option value="Tobacco FMCG">Tobacco FMCG</option>
+        <option value="Food Processing">Food Processing</option>
+        <option value="Dairy Food Processing">Dairy Food Processing</option>
+        <option value="Meat/Poultry Food Processing">Meat/Poultry Food Processing</option>
+        <option value="Sugar Food Processing">Sugar Food Processing</option>
+        <option value="Furniture & Furnishing">Furniture & Furnishing</option>
+        <option value="Gems & Jewellery">Gems & Jewellery</option>
+        <option value="Hotel & Restaurants">Hotel & Restaurants</option>
+        <option value="Leather">Leather</option>
+        <option value="Retail">Retail</option>
+        <option value="Textile & Apparel">Textile & Apparel</option>
+        <option value="Fashion & Textile & Apparel">Fashion & Textile & Apparel</option>
+        <option value="Handicraft Textile & Apparel">Handicraft Textile & Apparel</option>
+        <option value="Home Textile Textile & Apparel">Home Textile Textile & Apparel</option>
+        <option value="Yarn & Fabric">Yarn & Fabric</option>
+        <option value="Travel & Tourism">Travel & Tourism</option>
+        <option value="Biotechnology">Biotechnology</option>
+        <option value="Clinical Research/Contract Research">Clinical Research/Contract Research</option>
+        <option value="Medical Devices & Equipment">Medical Devices & Equipment</option>
+        <option value="Medical Services/Hospital">Medical Services/Hospital</option>
+        <option value="Diagnostics Medical Services/Hospital">Diagnostics Medical Services/Hospital</option>
+        <option value="Pharmaceutical & Life Sciences">Pharmaceutical & Life Sciences</option>
+        <option value="Advertising & Marketing">Advertising & Marketing</option>
+        <option value="Digital Marketing Advertising & Marketing">Digital Marketing Advertising & Marketing</option>
+        <option value="Public Relations Advertising & Marketing">Public Relations Advertising & Marketing</option>
+        <option value="Animation & VFX">Animation & VFX</option>
+        <option value="Events/Live Entertainment">Events/Live Entertainment</option>
+        <option value="Film/Music/Entertainment">Film/Music/Entertainment</option>
+        <option value="Gaming">Gaming</option>
+        <option value="Printing & Publishing">Printing & Publishing</option>
+        <option value="Sports/Leisure/Recreation">Sports/Leisure/Recreation</option>
+        <option value="Telecom/ISP">Telecom/ISP</option>
+        <option value="TV/Radio">TV/Radio</option>
+        <option value="Accounting & Auditing">Accounting & Auditing</option>
+        <option value="Architecture/Interior Design">Architecture/Interior Design</option>
+        <option value="Content Development/Language">Content Development/Language</option>
+        <option value="Design">Design</option>
+        <option value="Facility Management Services">Facility Management Services</option>
+        <option value="Law Enforcement/Security Services">Law Enforcement/Security Services</option>
+        <option value="Legal">Legal</option>
+        <option value="Management Consulting">Management Consulting</option>
+        <option value="Recruitment/Staffing">Recruitment/Staffing</option>
+        <option value="Agriculture/Forestry/Fishing">Agriculture/Forestry/Fishing</option>
+        <option value="Agri-tech Agriculture/Forestry/Fishing">Agri-tech Agriculture/Forestry/Fishing</option>
+        <option value="Government/Public Administration">Government/Public Administration</option>
+        <option value="Import & Export">Import & Export</option>
+        <option value="NGO/Social Service/Industry Associations">NGO/Social Service/Industry Associations</option>
+    </select>
+
+    <label for="department">Department</label>
+    <select name="department" id="department">
+        <option value="BFSI Investment and Trading">BFSI Investment and Trading</option>
+        <option value="Customer Success, Service & Operation">Customer Success, Service & Operation</option>
+        <option value="Data Science & Analytics">Data Science & Analytics</option>
+        <option value="Engineering Hardware & Networks">Engineering Hardware & Networks</option>
+        <option value="Engineering - Software & QA">Engineering - Software & QA</option>
+        <option value="Finance & Accounting">Finance & Accounting</option>
+        <option value="Human Resources">Human Resources</option>
+        <option value="IT & Information Security">IT & Information Security</option>
+        <option value="Marketing & Communication">Marketing & Communication</option>
+        <option value="Product Management">Product Management</option>
+        <option value="Production Manufacturing & Engineering">Production Manufacturing & Engineering</option>
+        <option value="Project & Program Management">Project & Program Management</option>
+        <option value="Quality Assurance">Quality Assurance</option>
+        <option value="Sales & Business Development">Sales & Business Development</option>
+        <option value="UX Design & Architecture">UX Design & Architecture</option>
+        <option value="Administration & Facilities">Administration & Facilities</option>
+        <option value="Aviation and Aerospace">Aviation and Aerospace</option>
+        <option value="Construction & Site Engineering">Construction & Site Engineering</option>
+        <option value="Consulting">Consulting</option>
+        <option value="Content Editorial & Journalism">Content Editorial & Journalism</option>
+        <option value="CSR and Social Service">CSR and Social Service</option>
+        <option value="Energy and Mining">Energy and Mining</option>
+        <option value="Environment Health & Safety">Environment Health & Safety</option>
+        <option value="Food Beverage & Hospitality">Food Beverage & Hospitality</option>
+        <option value="Healthcare & Life Sciences">Healthcare & Life Sciences</option>
+        <option value="Legal & Regulatory">Legal & Regulatory</option>
+        <option value="Media Production & Entertainment">Media Production & Entertainment</option>
+        <option value="Merchandising, Retail & e-commerce">Merchandising, Retail & e-commerce</option>
+        <option value="Procurement & Supply Chain">Procurement & Supply Chain</option>
+        <option value="Research & Development">Research & Development</option>
+        <option value="Risk Management & Compliance">Risk Management & Compliance</option>
+        <option value="Security Services">Security Services</option>
+        <option value="Shipping & Maritime">Shipping & Maritime</option>
+        <option value="Sports Fitness & Personal Care">Sports Fitness & Personal Care</option>
+        <option value="Strategic & Top Management">Strategic & Top Management</option>
+        <option value="Teaching & Training">Teaching & Training</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label for="role-category">Role Category</label>
+    <input type="text" name="role" id="role-category">
+
+    <label for="jobtype">Desired job type</label>
+    <div class="checkbox-group">
+        <label><input type="checkbox" name="jobtype" value="Permanent">Permanent</label>
+        <label><input type="checkbox" name="jobtype" value="Contractual">Contractual</label>
+    </div>
+
+    <label for="emptype">Desired employment type</label>
+    <div class="checkbox-group">
+        <label><input type="checkbox" name="emptype" value="Full time">Full time</label>
+        <label><input type="checkbox" name="emptype" value="Part time">Part time</label>
+    </div>
+
+    <label for="shift">Preferred shift</label>
+    <div class="radio-group">
+        <label><input type="radio" name="shift" value="Day">Day</label>
+        <label><input type="radio" name="shift" value="Night">Night</label>
+        <label><input type="radio" name="shift" value="Flexible">Flexible</label>
+    </div>
+
+    <label for="location">Preferred work location (Max 10)</label>
+    <div class="checkbox-group">
+        <label><input type="checkbox" name="location" value="Bengluru">Bengluru</label>
+        <label><input type="checkbox" name="location" value="Mumbai">Mumbai</label>
+        <label><input type="checkbox" name="location" value="Pune">Pune</label>
+        <label><input type="checkbox" name="location" value="Chennai">Chennai</label>
+        <label><input type="checkbox" name="location" value="Hyderabad">Hyderabad</label>
+        <label><input type="checkbox" name="location" value="Kerala">Kerala</label>
+        <label><input type="checkbox" name="location" value="Ernakulam">Ernakulam</label>
+        <label><input type="checkbox" name="location" value="Remote">Remote</label>
+    </div>
+
+    <label for="salary">Expected salary</label>
+    <input type="number" name="salary" id="salary">
+
+    <input type="submit" value="Upload" class="submit-button">
+</form>
+</body>
+</html>

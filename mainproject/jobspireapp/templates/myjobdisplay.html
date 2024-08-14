@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5" style="display:flex;justify-content:center;">
+        <div class="row">
+            {% for i in data %}
+            <div class="col">
+                <div class="card" style="width: 25rem;">
+                    <img src="{{ i.item.companylogo.url }}" class="card-img-top" alt="Company Logo" height="200px">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ i.item.jobtitle }}</h5>
+                        <p class="card-text"><strong>Company:</strong> {{ i.item.companyname }}</p>
+                        <p class="card-text"><strong>Description:</strong> {{ i.item.JobDescription }}</p>
+                        <p class="card-text"><strong>Requirements:</strong> {{ i.item.Requirements }}</p>
+                        <p class="card-text"><strong>Additional Info:</strong> {{ i.item.Additionalinformation }}</p>
+                        <p class="card-text"><strong>Schedule:</strong> {{ i.item.Schedule }}</p>
+                        <p class="card-text"><strong>Location:</strong> {{ i.item.location }}</p>
+                        <p class="card-text"><strong>Employment Type:</strong> {{ i.item.employmenttype }}</p>
+                        <p class="card-text"><strong>Salary:</strong> {{ i.item.salary }}</p>
+                        <p class="card-text"><strong>Contact Email:</strong> {{ i.item.contactemail }}</p>
+                        <a style="margin-left:6rem;" href="http://127.0.0.1:8000/jobspireapp/deletemyjob/{{ i.id }}?action=delete" class="btn btn-danger">Delete</a>
+                        <a href="http://127.0.0.1:8000/jobspireapp/apply/{{ i.item.id }}" class="btn btn-primary">Apply</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

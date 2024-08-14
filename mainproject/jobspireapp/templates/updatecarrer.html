@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        select, input[type="text"], input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="checkbox"], input[type="radio"] {
+            margin-right: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            margin-bottom: 5px;
+            display: block;
+        }
+        .form-group input[type="checkbox"], .form-group input[type="radio"] {
+            margin: 0 5px 0 0;
+        }
+        .form-group input[type="checkbox"] {
+            width: auto;
+        }
+        .form-group input[type="radio"] {
+            width: auto;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background:rgb(21, 123, 164);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .submit-btn:hover {
+            background:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="currentindustry">Current Industry</label>
+                <select name="Current" id="currentindustry">
+        <option value="Analytic/ KPO/ Research" {% if data.currentindustry == 'Analytic/ KPO/ Research' %} selected {% endif %}>Analytic/ KPO/ Research</option>
+        <option value="BPO/Call Centre" {% if data.currentindustry == 'BPO/Call Centre' %} selected {% endif %}>BPO/Call Centre</option>
+        <option value="IT services/Consulting" {% if data.currentindustry == 'IT services/Consulting' %} selected {% endif %}>IT services/Consulting</option>
+        <option value="Electronic Components/Semiconductors" {% if data.currentindustry == 'Electronic Components/Semiconductors' %} selected {% endif %}>Electronic Components/Semiconductors</option>
+        <option value="Electronic Manufacturing" {% if data.currentindustry == 'Electronic Manufacturing' %} selected {% endif %}>Electronic Manufacturing</option>
+        <option value="Electronic Manufacturing Services(EMS)" {% if data.currentindustry == 'Electronic Manufacturing Services(EMS)' %} selected {% endif %}>Electronic Manufacturing Services(EMS)</option>
+        <option value="Emerging Technologies" {% if data.currentindustry == 'Emerging Technologies' %} selected {% endif %}>Emerging Technologies</option>
+        <option value="AI/ML" {% if data.currentindustry == 'AI/ML' %} selected {% endif %}>AI/ML</option>
+        <option value="AR/VR" {% if data.currentindustry == 'AR/VR' %} selected {% endif %}>AR/VR</option>
+        <option value="Blockchain" {% if data.currentindustry == 'Blockchain' %} selected {% endif %}>Blockchain</option>
+        <option value="Cloud" {% if data.currentindustry == 'Cloud' %} selected {% endif %}>Cloud</option>
+        <option value="Cyber Security" {% if data.currentindustry == 'Cyber Security' %} selected {% endif %}>Cyber Security</option>
+        <option value="Drones/Robotics" {% if data.currentindustry == 'Drones/Robotics' %} selected {% endif %}>Drones/Robotics</option>
+        <option value="IoT" {% if data.currentindustry == 'IoT' %} selected {% endif %}>IoT</option>
+        <option value="Nanotechnology" {% if data.currentindustry == 'Nanotechnology' %} selected {% endif %}>Nanotechnology</option>
+        <option value="Hardware and Networking" {% if data.currentindustry == 'Hardware and Networking' %} selected {% endif %}>Hardware and Networking</option>
+        <option value="Internet" {% if data.currentindustry == 'Internet' %} selected {% endif %}>Internet</option>
+        <option value="E-commerce" {% if data.currentindustry == 'E-commerce' %} selected {% endif %}>E-commerce</option>
+        <option value="Software Product" {% if data.currentindustry == 'Software Product' %} selected {% endif %}>Software Product</option>
+        <option value="Banking" {% if data.currentindustry == 'Banking' %} selected {% endif %}>Banking</option>
+        <option value="Asset Management Financial Services" {% if data.currentindustry == 'Asset Management Financial Services' %} selected {% endif %}>Asset Management Financial Services</option>
+        <option value="Broking Financial Services" {% if data.currentindustry == 'Broking Financial Services' %} selected {% endif %}>Broking Financial Services</option>
+        <option value="Fintech Payment" {% if data.currentindustry == 'Fintech Payment' %} selected {% endif %}>Fintech Payment</option>
+        <option value="Insurance" {% if data.currentindustry == 'Insurance' %} selected {% endif %}>Insurance</option>
+        <option value="Investment Banking /Venture Capital /Private Equity" {% if data.currentindustry == 'Investment Banking /Venture Capital /Private Equity' %} selected {% endif %}>Investment Banking /Venture Capital /Private Equity</option>
+        <option value="NBFC" {% if data.currentindustry == 'NBFC' %} selected {% endif %}>NBFC</option>
+        <option value="Micro Finance" {% if data.currentindustry == 'Micro Finance' %} selected {% endif %}>Micro Finance</option>
+        <option value="Education/Training" {% if data.currentindustry == 'Education/Training' %} selected {% endif %}>Education/Training</option>
+        <option value="E-Learning/Edtech" {% if data.currentindustry == 'E-Learning/Edtech' %} selected {% endif %}>E-Learning/Edtech</option>
+        <option value="Auto Components" {% if data.currentindustry == 'Auto Components' %} selected {% endif %}>Auto Components</option>
+        <option value="Automobile" {% if data.currentindustry == 'Automobile' %} selected {% endif %}>Automobile</option>
+        <option value="Automobile Dealers" {% if data.currentindustry == 'Automobile Dealers' %} selected {% endif %}>Automobile Dealers</option>
+        <option value="Electric Vehicle(EV)" {% if data.currentindustry == 'Electric Vehicle(EV)' %} selected {% endif %}>Electric Vehicle(EV)</option>
+        <option value="Building Material" {% if data.currentindustry == 'Building Material' %} selected {% endif %}>Building Material</option>
+        <option value="Cement Building Material" {% if data.currentindustry == 'Cement Building Material' %} selected {% endif %}>Cement Building Material</option>
+        <option value="Ceramic Building Material" {% if data.currentindustry == 'Ceramic Building Material' %} selected {% endif %}>Ceramic Building Material</option>
+        <option value="Glass Building Material" {% if data.currentindustry == 'Glass Building Material' %} selected {% endif %}>Glass Building Material</option>
+        <option value="Chemicals" {% if data.currentindustry == 'Chemicals' %} selected {% endif %}>Chemicals</option>
+        <option value="Paint Chemicals" {% if data.currentindustry == 'Paint Chemicals' %} selected {% endif %}>Paint Chemicals</option>
+        <option value="Defence & Aerospace" {% if data.currentindustry == 'Defence & Aerospace' %} selected {% endif %}>Defence & Aerospace</option>
+        <option value="Electrical Equipment" {% if data.currentindustry == 'Electrical Equipment' %} selected {% endif %}>Electrical Equipment</option>
+        <option value="Fertilizer /Pesticides/Agro chemicals" {% if data.currentindustry == 'Fertilizer /Pesticides/Agro chemicals' %} selected {% endif %}>Fertilizer /Pesticides/Agro chemicals</option>
+        <option value="Industrial Automation" {% if data.currentindustry == 'Industrial Automation' %} selected {% endif %}>Industrial Automation</option>
+        <option value="Industrial Equipment/Machinery" {% if data.currentindustry == 'Industrial Equipment/Machinery' %} selected {% endif %}>Industrial Equipment/Machinery</option>
+        <option value="Iron & Steel" {% if data.currentindustry == 'Iron & Steel' %} selected {% endif %}>Iron & Steel</option>
+        <option value="Metals and Mining" {% if data.currentindustry == 'Metals and Mining' %} selected {% endif %}>Metals and Mining</option>
+        <option value="Packaging and Containers" {% if data.currentindustry == 'Packaging and Containers' %} selected {% endif %}>Packaging and Containers</option>
+        <option value="Petrochemicals/Plastic/Rubber" {% if data.currentindustry == 'Petrochemicals/Plastic/Rubber' %} selected {% endif %}>Petrochemicals/Plastic/Rubber</option>
+        <option value="Pulp & Paper" {% if data.currentindustry == 'Pulp & Paper' %} selected {% endif %}>Pulp & Paper</option>
+        <option value="Aviation" {% if data.currentindustry == 'Aviation' %} selected {% endif %}>Aviation</option>
+        <option value="Courier Logistic" {% if data.currentindustry == 'Courier Logistic' %} selected {% endif %}>Courier Logistic</option>
+        <option value="Engineering & Construction" {% if data.currentindustry == 'Engineering & Construction' %} selected {% endif %}>Engineering & Construction</option>
+        <option value="Oil & Gas" {% if data.currentindustry == 'Oil & Gas' %} selected {% endif %}>Oil & Gas</option>
+        <option value="Petroleum/Oil and Gas/Refinery" {% if data.currentindustry == 'Petroleum/Oil and Gas/Refinery' %} selected {% endif %}>Petroleum/Oil and Gas/Refinery</option>
+        <option value="Power" {% if data.currentindustry == 'Power' %} selected {% endif %}>Power</option>
+        <option value="Renewable Energy" {% if data.currentindustry == 'Renewable Energy' %} selected {% endif %}>Renewable Energy</option>
+        <option value="Solar Energy" {% if data.currentindustry == 'Solar Energy' %} selected {% endif %}>Solar Energy</option>
+        <option value="Textile & Apparel" {% if data.currentindustry == 'Textile & Apparel' %} selected {% endif %}>Textile & Apparel</option>
+        <option value="Apparel & Accessories" {% if data.currentindustry == 'Apparel & Accessories' %} selected {% endif %}>Apparel & Accessories</option>
+        <option value="Consumer Durables" {% if data.currentindustry == 'Consumer Durables' %} selected {% endif %}>Consumer Durables</option>
+        <option value="Consumer Electronics" {% if data.currentindustry == 'Consumer Electronics' %} selected {% endif %}>Consumer Electronics</option>
+        <option value="Consumer Goods" {% if data.currentindustry == 'Consumer Goods' %} selected {% endif %}>Consumer Goods</option>
+        <option value="CPG" {% if data.currentindustry == 'CPG' %} selected {% endif %}>CPG</option>
+        <option value="FMCG" {% if data.currentindustry == 'FMCG' %} selected {% endif %}>FMCG</option>
+        <option value="Pharmaceutical" {% if data.currentindustry == 'Pharmaceutical' %} selected {% endif %}>Pharmaceutical</option>
+        <option value="Healthcare" {% if data.currentindustry == 'Healthcare' %} selected {% endif %}>Healthcare</option>
+        <option value="Medical Devices" {% if data.currentindustry == 'Medical Devices' %} selected {% endif %}>Medical Devices</option>
+        <option value="Clinical Research/Contract Research Organisation" {% if data.currentindustry == 'Clinical Research/Contract Research Organisation' %} selected {% endif %}>Clinical Research/Contract Research Organisation</option>
+        <option value="Healthcare/ Hospitals" {% if data.currentindustry == 'Healthcare/ Hospitals' %} selected {% endif %}>Healthcare/ Hospitals</option>
+        <option value="Diagnostics" {% if data.currentindustry == 'Diagnostics' %} selected {% endif %}>Diagnostics</option>
+        <option value="Telecom" {% if data.currentindustry == 'Telecom' %} selected {% endif %}>Telecom</option>
+        <option value="Entertainment" {% if data.currentindustry == 'Entertainment' %} selected {% endif %}>Entertainment</option>
+        <option value="Market Research" {% if data.currentindustry == 'Market Research' %} selected {% endif %}>Market Research</option>
+        <option value="Media" {% if data.currentindustry == 'Media' %} selected {% endif %}>Media</option>
+        <option value="Advertising" {% if data.currentindustry == 'Advertising' %} selected {% endif %}>Advertising</option>
+        <option value="Digital Marketing" {% if data.currentindustry == 'Digital Marketing' %} selected {% endif %}>Digital Marketing</option>
+        <option value="PR" {% if data.currentindustry == 'PR' %} selected {% endif %}>PR</option>
+        <option value="Food Processing" {% if data.currentindustry == 'Food Processing' %} selected {% endif %}>Food Processing</option>
+        <option value="Hotel & Restaurants" {% if data.currentindustry == 'Hotel & Restaurants' %} selected {% endif %}>Hotel & Restaurants</option>
+        <option value="Tobacco" {% if data.currentindustry == 'Tobacco' %} selected {% endif %}>Tobacco</option>
+        <option value="Real Estate" {% if data.currentindustry == 'Real Estate' %} selected {% endif %}>Real Estate</option>
+        <option value="Construction & Engineering" {% if data.currentindustry == 'Construction & Engineering' %} selected {% endif %}>Construction & Engineering</option>
+        <option value="Leisure/Travel" {% if data.currentindustry == 'Leisure/Travel' %} selected {% endif %}>Leisure/Travel</option>
+        <option value="Airlines" {% if data.currentindustry == 'Airlines' %} selected {% endif %}>Airlines</option>
+        <option value="Logistics" {% if data.currentindustry == 'Logistics' %} selected {% endif %}>Logistics</option>
+        <option value="Agriculture" {% if data.currentindustry == 'Agriculture' %} selected {% endif %}>Agriculture</option>
+        <option value="Retail" {% if data.currentindustry == 'Retail' %} selected {% endif %}>Retail</option>
+        <option value="NGO/Social Services" {% if data.currentindustry == 'NGO/Social Services' %} selected {% endif %}>NGO/Social Services</option>
+        <option value="Government/ PSU/ Defence" {% if data.currentindustry == 'Government/ PSU/ Defence' %} selected {% endif %}>Government/ PSU/ Defence</option>
+        <option value="Others" {% if data.currentindustry == 'Others' %} selected {% endif %}>Others</option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department</label>
+                <select name="department" id="department">
+                    <option value="BFSI Investment and Trading" {% if data.department == 'BFSI Investment and Trading' %} selected {% endif %}>BFSI Investment and Trading</option>
+        <option value="Customer Success, Service & Operation" {% if data.department == 'Customer Success, Service & Operation' %} selected {% endif %}>Customer Success, Service & Operation</option>
+        <option value="Data Science & Analytics" {% if data.department == 'Data Science & Analytics' %} selected {% endif %}>Data Science & Analytics</option>
+        <option value="Engineering Hardware & Networks" {% if data.department == 'Engineering Hardware & Networks' %} selected {% endif %}>Engineering Hardware & Networks</option>
+        <option value="Engineering -Software & QA" {% if data.department == 'Engineering -Software & QA' %} selected {% endif %}>Engineering -Software & QA</option>
+        <option value="Finance & Accounting" {% if data.department == 'Finance & Accounting' %} selected {% endif %}>Finance & Accounting</option>
+        <option value="Human Resources" {% if data.department == 'Human Resources' %} selected {% endif %}>Human Resources</option>
+        <option value="IT & Information Security" {% if data.department == 'IT & Information Security' %} selected {% endif %}>IT & Information Security</option>
+        <option value="Marketing & Communication" {% if data.department == 'Marketing & Communication' %} selected {% endif %}>Marketing & Communication</option>
+        <option value="Product Management" {% if data.department == 'Product Management' %} selected {% endif %}>Product Management</option>
+        <option value="Production Manufacturing & Engineering" {% if data.department == 'Production Manufacturing & Engineering' %} selected {% endif %}>Production Manufacturing & Engineering</option>
+        <option value="Project & Program Management" {% if data.department == 'Project & Program Management' %} selected {% endif %}>Project & Program Management</option>
+        <option value="Quality Assurance" {% if data.department == 'Quality Assurance' %} selected {% endif %}>Quality Assurance</option>
+        <option value="Sales & Business Development" {% if data.department == 'Sales & Business Development' %} selected {% endif %}>Sales & Business Development</option>
+        <option value="UX Design & Architecture" {% if data.department == 'UX Design & Architecture' %} selected {% endif %}>UX Design & Architecture</option>
+        <option value="Administration & Facilities" {% if data.department == 'Administration & Facilities' %} selected {% endif %}>Administration & Facilities</option>
+        <option value="Aviation and Aerospace" {% if data.department == 'Aviation and Aerospace' %} selected {% endif %}>Aviation and Aerospace</option>
+        <option value="Construction & Site Engineering" {% if data.department == 'Construction & Site Engineering' %} selected {% endif %}>Construction & Site Engineering</option>
+        <option value="Consulting" {% if data.department == 'Consulting' %} selected {% endif %}>Consulting</option>
+        <option value="Content Editorial & Journalism" {% if data.department == 'Content Editorial & Journalism' %} selected {% endif %}>Content Editorial & Journalism</option>
+        <option value="CSR and Social Service" {% if data.department == 'CSR and Social Service' %} selected {% endif %}>CSR and Social Service</option>
+        <option value="Energy and Mining" {% if data.department == 'Energy and Mining' %} selected {% endif %}>Energy and Mining</option>
+        <option value="Environment Health & Safety" {% if data.department == 'Environment Health & Safety' %} selected {% endif %}>Environment Health & Safety</option>
+        <option value="Food Beverage & Hospitality" {% if data.department == 'Food Beverage & Hospitality' %} selected {% endif %}>Food Beverage & Hospitality</option>
+        <option value="Healthcare & Life Sciences" {% if data.department == 'Healthcare & Life Sciences' %} selected {% endif %}>Healthcare & Life Sciences</option>
+        <option value="Legal & Regulatory" {% if data.department == 'Legal & Regulatory' %} selected {% endif %}>Legal & Regulatory</option>
+        <option value="Media Production & Environment" {% if data.department == 'Media Production & Environment' %} selected {% endif %}>Media Production & Environment</option>
+        <option value="Merchandising, Retail & e-commerce" {% if data.department == 'Merchandising, Retail & e-commerce' %} selected {% endif %}>Merchandising, Retail & e-commerce</option>
+        <option value="Procurement & Supply Chain" {% if data.department == 'Procurement & Supply Chain' %} selected {% endif %}>Procurement & Supply Chain</option>
+        <option value="Research & Development" {% if data.department == 'Research & Development' %} selected {% endif %}>Research & Development</option>
+        <option value="Risk Management & Compliance" {% if data.department == 'Risk Management & Compliance' %} selected {% endif %}>Risk Management & Compliance</option>
+        <option value="Security Services" {% if data.department == 'Security Services' %} selected {% endif %}>Security Services</option>
+        <option value="Shipping & Maritime" {% if data.department == 'Shipping & Maritime' %} selected {% endif %}>Shipping & Maritime</option>
+        <option value="Sports Fitness & Personal Care" {% if data.department == 'Sports Fitness & Personal Care' %} selected {% endif %}>Sports Fitness & Personal Care</option>
+        <option value="Strategic & Top Management" {% if data.department == 'Strategic & Top Management' %} selected {% endif %}>Strategic & Top Management</option>
+        <option value="Teaching & Training" {% if data.department == 'Teaching & Training' %} selected {% endif %}>Teaching & Training</option>
+        <option value="Other" {% if data.department == 'Other' %} selected {% endif %}>Other</option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="role">Role Category</label>
+                <input type="text" name="role" id="role" value="{{data.rolecategory}}">
+            </div>
+
+            <div class="form-group">
+                <label>Desired Job Type</label>
+                <input value="Permanent" type="checkbox" name="jobtype" {% if data.jobtype == 'Permanent' %} checked {% endif %}>Permanent
+                <input value="Contractual" type="checkbox" name="jobtype" {% if data.jobtype == 'Contractual' %} checked {% endif %}>Contractual
+            </div>
+
+            <div class="form-group">
+                <label>Desired Employment Type</label>
+                <input value="Full time" type="checkbox" name="emptype" {% if data.employmenttype == 'Full time' %} checked {% endif %}>Full time
+                <input value="Part time" type="checkbox" name="emptype" {% if data.employmenttype == 'Part time' %} checked {% endif %}>Part time
+            </div>
+
+            <div class="form-group">
+                <label>Preferred Shift</label>
+                <input value="Day" type="radio" name="shift" {% if data.shift == 'Day' %} checked {% endif %}>Day
+                <input value="Night" type="radio" name="shift" {% if data.shift == 'Night' %} checked {% endif %}>Night
+                <input value="Flexible" type="radio" name="shift" {% if data.shift == 'Flexible' %} checked {% endif %}>Flexible
+            </div>
+
+            <div class="form-group">
+                <label for="location">Preferred Work Location (Max 10)</label>
+                <input type="text" name="location" id="location" value="{{data.location}}"><br>
+                <input type="checkbox" name="location" value="Bengaluru" {% if data.location == 'Bengaluru' %} checked {% endif %}>Bengaluru
+                <input type="checkbox" name="location" value="Mumbai" {% if data.location == 'Mumbai' %} checked {% endif %}>Mumbai
+                <input type="checkbox" name="location" value="Pune" {% if data.location == 'Pune' %} checked {% endif %}>Pune
+                <input type="checkbox" name="location" value="Chennai" {% if data.location == 'Chennai' %} checked {% endif %}>Chennai
+                <input type="checkbox" name="location" value="Hyderabad" {% if data.location == 'Hyderabad' %} checked {% endif %}>Hyderabad
+                <input type="checkbox" name="location" value="Thrissur" {% if data.location == 'Thrissur' %} checked {% endif %}>Thrissur
+                <input type="checkbox" name="location" value="Ernakulam" {% if data.location == 'Ernakulam' %} checked {% endif %}>Ernakulam
+                <input type="checkbox" name="location" value="Remote" {% if data.location == 'Remote' %} checked {% endif %}>Remote
+            </div>
+
+            <div class="form-group">
+                <label for="salary">Expected Salary</label>
+                <input type="number" name="salary" id="salary" value="{{data.expectedsalary}}">
+            </div>
+
+            <input type="submit" class="submit-btn" value="Save">
+        </form>
+    </div>
+</body>
+</html>

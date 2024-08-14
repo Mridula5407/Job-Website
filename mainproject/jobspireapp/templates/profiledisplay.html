@@ -1,0 +1,280 @@
+<!--________________________________________________________________________________________&ndash;&gt;&ndash;&gt;-->
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .containerf {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+        .profile-pic {
+            border-radius: 50%;
+            height: 120px;
+            width: 120px;
+            object-fit: cover;
+        }
+
+         .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .resume-file {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .resume-file i {
+            font-size: 24px;
+        }
+        h6{
+         color: #999999;
+        }
+    </style>
+</head>
+<body>
+<div class="firstnav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="{% static 'img/img.png' %}" height="80px" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/jobspireapp/jobdisplay/">Job Search</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="http://127.0.0.1:8000/jobspireapp/profiledisplayall/">Profile</a>
+                    </li>
+                    <li class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Career advice
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#">Companies</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-info me-2" type="submit">Sign In</button>
+                </form>
+                <a class="nav-link" href="#">Employer site</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<br>
+<div class="containerf">
+    <div class="row">
+        <div class="col-md-3">
+            <a href="http://127.0.0.1:8000/jobspireapp/updatepic/"><img style="" src="{{ p.profilepic.url }}" class="profile-pic" alt="Profile Picture"></a>
+        </div>
+        <div class="col-md-9">
+            <h3>{{ data.fullname }}</h3>
+            <hr>
+            <div class="row">
+
+                <div class="col-md-6">
+                    <i class="fa-solid fa-suitcase fa-2xs"></i> {{ data.workstatus }}<br>
+                    <i class="fa-solid fa-location-dot fa-2xs"></i> {{ p.personaldetails.hometown }}<br>
+                    <i class="fa-solid fa-calendar-days fa-2xs"></i> Available to join in {{ p.employmentdetails.noticeperiod }}
+                </div>
+                <div class="col-md-6">
+                    <i class="fa-regular fa-envelope fa-2xs"></i> {{ data.email }}<br>
+                    <i class="fa-solid fa-mobile-retro fa-2xs"></i> {{ data.mobile }} <a href="http://127.0.0.1:8000/jobspireapp/updatereg/"><br><i class="fa-regular fa-pen-to-square fa-2xs"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container-f p-3 mb-3 bg-white rounded shadow-sm" style="height:322vh">
+
+                <h6>Resume</h6><br>
+                 <h6>Resume Headline</h6><br>
+                 <h6>Key Skills</h6><br>
+                 <h6>Education</h6><br>
+                <h6>Projects</h6><br>
+                <h6>Profile summary</h6><br>
+                <h6>Career profile</h6><br>
+                <h6>Personal details</h6><br>
+                <h6></h6>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="container-f p-3 mb-3 bg-white rounded shadow-sm">
+               <div class="resume">
+            <div class="resume-header">
+                <h5>Resume</h5>
+                 <a download=""  href="{{p.resume.url}}"><i style="color:skyblue;" class="fas fa-download"></i></a>
+            </div>
+            <div class="resume-file">
+                <i class="fas fa-file-pdf"></i>
+                <span><a style="text-decoration:none;color:skyblue;" href="{{ p.resume.url }}">{{p.resume}}</a></span>
+
+            </div><br>
+                   <div style="display:flex;justify-content:center; height:4rem;border:solid skyblue;" class=" bg-white rounded shadow-sm " >
+                        <a style="padding-top:15px;" href="http://127.0.0.1:8000/jobspireapp/updateresume/" class="btn">Update resume</a>
+                   </div>
+        </div>
+            </div>
+
+            <div class="container-f p-3 mb-3 bg-white rounded shadow-sm">
+                <div class="resume-header">
+                <h5>Resume Headline</h5>
+                     <a href="http://127.0.0.1:8000/jobspireapp/updateresumeheadline/"><i class="fa-regular fa-pen-to-square"></i></a>
+                </div>
+                <p>{{ p.resumeheadline }}</p>
+            </div>
+
+
+             <div class="container-f p-3 mb-3 bg-white rounded shadow-sm">
+                  <div class="resume-header">
+                <h5>Key Skills</h5>
+                     <a href="http://127.0.0.1:8000/jobspireapp/updatekeyskill/"><i class="fa-regular fa-pen-to-square"></i></a>
+                </div>
+                 <p> {{ p.keyskills }}</p>
+
+
+            </div>
+
+              <div class="container-f p-3 mb-3 bg-white rounded shadow-sm">
+                   <div class="resume-header">
+                <h5>Employment</h5>
+                     <a href="http://127.0.0.1:8000/jobspireapp/updateemployment/"><i class="fa-regular fa-pen-to-square"></i></a>
+                </div>
+                  <label><strong>Employment Type:</strong></label> {{ p.employmentdetails.employmenttype }}<br>
+                  <label><strong>Company Name:</strong></label> {{ p.employmentdetails.currentcompanyname }}<br>
+                  <label><strong>Job Profile:</strong></label> {{ p.employmentdetails.jobprofile }}<br>
+                  <label><strong>Joining Date:</strong></label> {{ p.employmentdetails.joiningdate }}<br>{{p.employmentdetails.totalexperience}}
+            </div>
+
+
+              <div class="container-f p-3 mb-3 bg-white rounded shadow-sm">
+                 <div class="resume-header">
+                <h5>Education</h5>
+                     <a href="http://127.0.0.1:8000/jobspireapp/updateeducation/"><i class="fa-regular fa-pen-to-square"></i></a>
+                </div>
+                 {{p.educationdetails.education}}<br>
+                  {{p.educationdetails.course}}<br>
+                 {{p.educationdetails.university}}<br>
+                  {{p.educationdetails.coursedurationstart}}-{{p.educationdetails.coursedurationend}}<br>
+                 {{p.educationdetails.coursetype}}
+
+            </div>
+
+              <div class="container-f p-3 mb-3 bg-white rounded shadow-sm">
+                 <div class="resume-header">
+                <h5>Projects</h5>
+                     <a href="http://127.0.0.1:8000/jobspireapp/updateproject/"><i class="fa-regular fa-pen-to-square"></i></a>
+                </div>
+                  <p>{{ p.projects }}</p><br>
+
+
+            </div>
+                <div class="container-f p-3 mb-3 bg-white rounded shadow-sm">
+                 <div class="resume-header">
+                <h5>Profile Summary</h5>
+                     <a href="http://127.0.0.1:8000/jobspireapp/updateproject/"><i class="fa-regular fa-pen-to-square"></i></a>
+                </div>
+                  <p>{{  p.profilesummary }}</p><br>
+
+            </div>
+
+            <div class="container-f p-3 mb-3 bg-white rounded shadow-sm">
+                 <div class="resume-header">
+                <h5>Career profile</h5>
+                     <a href="http://127.0.0.1:8000/jobspireapp/updatecarrer/"><i class="fa-regular fa-pen-to-square"></i></a>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h6>Current Industry:</h6>{{p.carrerprofile.currentindustry}}<br><br>
+                        <h6>Role category:</h6>{{p.carrerprofile.rolecategory}}<br><br>
+                        <h6>Preferred shift:</h6>{{p.carrerprofile.shift}}<br><br>
+                        <h6>Preferred work location:</h6>{{p.carrerprofile.location}}<br>
+
+                    </div>
+                    <div class="col-6">
+                       <h6>Department:</h6>{{p.carrerprofile.department}}<br><br>
+                        <h6>Desired job type:</h6>{{p.carrerprofile.jobtype}}<br><br>
+                        <h6>Desired employment type:</h6>{{p.carrerprofile.employmenttype}}<br><br>
+                       <h6>Expected salary:</h6>{{p.carrerprofile.expectedsalary}}<br>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+             <div class="container-f p-3 mb-3 bg-white rounded shadow-sm">
+                 <div class="resume-header">
+                <h5>Personal Details</h5>
+                     <a href="http://127.0.0.1:8000/jobspireapp/updatepersonal/"><i class="fa-regular fa-pen-to-square"></i></a>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h6>Personal:</h6>{{p.personaldetails.gender}},{{p.personaldetails.martialstatus}}<br><br>
+                        <h6>Date of birth:</h6>{{p.personaldetails.dob}}<br><br>
+                        <h6>Differently abled:</h6>{{p.personaldetails.diffrentlyabled }}<br><br>
+
+                    </div>
+                    <div class="col-6">
+                        <h6>Carrer break:</h6>{{p.personaldetails.careerbreak}}<br><br>
+                       <h6>Address</h6>{{p.personaldetails.address }},{{p.personaldetails.hometown}},{{p.personaldetails.pincode}}<br><br>
+                    </div>
+                </div>
+
+             </div>
+             <div class="container-f p-3 mb-3 bg-white rounded shadow-sm">
+                 <div class="resume-header">
+                <h5>Languages</h5>
+                </div>
+                 {{ p.personaldetails.languages }}
+
+            </div>
+
+        </div>
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+</body>
+</html>
+
+

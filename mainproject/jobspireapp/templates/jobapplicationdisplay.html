@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+        .summary-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .summary-item {
+            margin-bottom: 15px;
+        }
+        .summary-item label {
+            font-weight: bold;
+            color: #555;
+        }
+        .summary-item span {
+            display: block;
+            margin-top: 5px;
+        }
+        .summary-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .summary-link a {
+            padding: 10px 20px;
+            background-color: rgb(21, 123, 164);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .summary-link a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="summary-container">
+        <h1>Application Summary</h1>
+        <div class="summary-item">
+            <label for="name">Name:</label>
+            <span id="name">{{ data.name }}</span>
+        </div>
+        <div class="summary-item">
+            <label for="email">Email:</label>
+            <span id="email">{{ data.email }}</span>
+        </div>
+        <div class="summary-item">
+            <label for="resume">Resume:</label>
+            <a href="{{ data.resume.url }}"><span id="resume">{{ data.resume }}</span></a>
+        </div>
+        <div class="summary-item">
+            <label for="cover_letter">Cover Letter:</label>
+            <span id="cover_letter">{{ data.cover_letter }}</span>
+        </div>
+        <div class="summary-link">
+            <a href="http://127.0.0.1:8000/jobspireapp/summary/">Application Submit</a>
+        </div>
+    </div>
+</body>
+</html>
+

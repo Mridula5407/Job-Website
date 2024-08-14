@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Education Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+            font-weight:700;
+        }
+        input[type="text"], select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .radio-group label {
+            width: 100%;
+            margin: 5px 0;
+        }
+        .submit-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: rgb(21, 123, 164);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+    <h1>Education</h1>
+    <label for="education">Education</label>
+    <input type="text" name="Education" id="education"><br><br>
+
+    <label for="university">University/Institute</label>
+    <input type="text" name="University" id="university"><br><br>
+
+    <label for="course">Course</label>
+    <input type="text" name="Course" id="course"><br><br>
+
+    <label for="specialization">Specialization</label>
+    <input type="text" name="Specialization" id="specialization"><br><br>
+
+    <label for="coursetype">Course Type</label>
+    <div class="radio-group">
+        <label><input type="radio" name="Coursetype" value="Full-Time">Full-Time</label>
+        <label><input type="radio" name="Coursetype" value="Part-Time">Part-Time</label>
+        <label><input type="radio" name="Coursetype" value="Correspondence/Distance Learning">Correspondence/Distance Learning</label>
+    </div><br>
+
+    <label for="coursedurationstart">Course Duration</label>
+    <select name="coursedurationstart" id="coursedurationstart">
+        <option value="" disabled selected>Starting Year</option>
+        <!-- Starting Year options -->
+        <option>2024</option>
+        <option>2023</option>
+        <option>2022</option>
+        <option>2021</option>
+        <option>2020</option>
+        <option>2019</option>
+        <option>2018</option>
+        <option>2017</option>
+        <option>2016</option>
+        <option>2015</option>
+        <option>2014</option>
+        <option>2013</option>
+        <option>2012</option>
+        <option>2011</option>
+        <option>2010</option>
+        <option>2009</option>
+        <option>2008</option>
+        <option>2007</option>
+        <option>2006</option>
+        <option>2005</option>
+        <option>2004</option>
+        <option>2003</option>
+        <option>2002</option>
+        <option>2001</option>
+        <option>2000</option>
+        <option>1999</option>
+        <option>1998</option>
+        <option>1997</option>
+        <option>1996</option>
+        <option>1995</option>
+        <option>1994</option>
+        <option>1993</option>
+        <option>1992</option>
+        <option>1991</option>
+        <option>1990</option>
+        <option>1989</option>
+        <option>1988</option>
+    </select> To
+    <select name="coursedurationend" id="coursedurationend">
+        <option value="" disabled selected>Ending Year</option>
+        <!-- Ending Year options -->
+        <option>2031</option>
+        <option>2030</option>
+        <option>2029</option>
+        <option>2028</option>
+        <option>2027</option>
+        <option>2026</option>
+        <option>2025</option>
+        <option>2024</option>
+        <option>2023</option>
+        <option>2022</option>
+        <option>2021</option>
+        <option>2020</option>
+        <option>2019</option>
+        <option>2018</option>
+        <option>2017</option>
+        <option>2016</option>
+        <option>2015</option>
+        <option>2014</option>
+        <option>2013</option>
+        <option>2012</option>
+        <option>2011</option>
+        <option>2010</option>
+        <option>2009</option>
+        <option>2008</option>
+        <option>2007</option>
+        <option>2006</option>
+        <option>2005</option>
+        <option>2004</option>
+        <option>2003</option>
+        <option>2002</option>
+        <option>2001</option>
+        <option>2000</option>
+        <option>1999</option>
+        <option>1998</option>
+        <option>1997</option>
+        <option>1996</option>
+        <option>1995</option>
+        <option>1994</option>
+        <option>1993</option>
+        <option>1992</option>
+        <option>1991</option>
+        <option>1990</option>
+        <option>1989</option>
+        <option>1988</option>
+    </select><br><br>
+
+    <label for="gradingsystem">Grading System</label>
+    <select name="gradingsystem" id="gradingsystem">
+        <option value="" disabled selected>Select Grading System</option>
+        <option>Scale 10 Grading System</option>
+        <option>Scale 4 Grading System</option>
+        <option>% of 100 Maximum</option>
+        <option>Course Requires a Pass</option>
+    </select><br><br>
+
+    <input type="submit" value="Upload" class="submit-button">
+</form>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .contact-page {
+            padding: 50px 0;
+        }
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .contact-header h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .contact-form {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .contact-info {
+            margin-top: 30px;
+        }
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .contact-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contact Us Page Section -->
+    <div class="container contact-page">
+        <div class="contact-header">
+            <h1>Contact Us</h1>
+            <p>We would love to hear from you. Please fill out the form below or contact us directly.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form class="contact-form" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-6 contact-info">
+                <h3>Contact Information</h3>
+                <p><strong>Address:</strong> 123 Job Street, Job City, JS 12345</p>
+                <p><strong>Email:</strong> <a href="mailto:support@jobspire.com">support@jobspirewebsite.com</a></p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+                <p><strong>Follow us:</strong></p>
+                <p>
+                    <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a> |
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a> |
+                    <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

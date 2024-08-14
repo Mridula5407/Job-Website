@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for i in apply_items  %}
+<ul>
+    <li>
+    <p>Company Name:{{i.companyname}}</p>
+        <p>Job Title:{{i.jobtitle}}</p>
+
+
+
+Subject: Application for {{i.jobtitle}}  Position<br>
+
+Dear Candidate,
+
+Thank you for applying for the {{i.jobtitle}} position at {{i.companyname}}. We have received your application and appreciate your interest in joining our team.
+
+Our hiring team is currently reviewing all applications, and we will be shortlisting candidates whose qualifications and experiences best meet our needs. If your application is selected for further consideration, we will contact you to schedule an interview within the next two weeks.
+
+In the meantime, if you have any questions or need further information, please feel free to reach out to us at company website.
+
+Thank you again for your interest in {{i.companyname}}. We appreciate the time and effort you have put into your application and look forward to reviewing it.
+
+Best regards,<br>
+
+{{i.jobtitle}}<br>
+{{i.companyname}}<br>
+
+
+
+</li>
+</ul>
+{% endfor %}
+
+
+</body>
+</html>

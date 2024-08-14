@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="number"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            background-color:rgb(21, 123, 164);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color:skyblue;
+        }
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+    <label>Is this your current employment?</label><br>
+    <div class="radio-group">
+        <input type="radio" value="Yes" name="currentemployment" id="Yes" {% if data.currentemployment == 'Yes' %} checked {% endif %}>Yes
+        <input type="radio" name="currentemployment" value="No" id="No" {% if data.currentemployment == 'No' %} checked {% endif %}>No
+    </div>
+
+    <label>Employment type</label><br>
+    <div class="radio-group">
+        <input type="radio" id="fulltime" name="Employmenttype" value="Fulltime" required {% if data.employmenttype == 'Fulltime' %} checked {% endif %}>Full-time
+        <input type="radio" id="Internship" name="Employmenttype" value="Internship" required {% if data.employmenttype == 'Internship' %} checked {% endif %}>Internship
+    </div>
+
+    <label>Total experience</label><br>
+    <select id="years" name="years">
+        <option value="0 year" {% if data.years == '0 year' %} selected {% endif %}>0 Year</option>
+        <option value="1 year" {% if data.years == '1 year' %} selected {% endif %}>1 Year</option>
+        <option value="2 years" {% if data.years == '2 years' %} selected {% endif %}>2 Years</option>
+        <option value="3 years" {% if data.years == '3 years' %} selected {% endif %}>3 Years</option>
+        <option value="4 years" {% if data.years == '4 years' %} selected {% endif %}>4 Years</option>
+        <option value="5 years" {% if data.years == '5 years' %} selected {% endif %}>5 Years</option>
+        <option value="6 years" {% if data.years == '6 years' %} selected {% endif %}>6 Years</option>
+        <option value="7 years" {% if data.years == '7 years' %} selected {% endif %}>7 Years</option>
+        <option value="8 years" {% if data.years == '8 years' %} selected {% endif %}>8 Years</option>
+        <option value="9 years" {% if data.years == '9 years' %} selected {% endif %}>9 Years</option>
+        <option value="10 years" {% if data.years == '10 years' %} selected {% endif %}>10 Years</option>
+        <option value="11 years" {% if data.years == '11 years' %} selected {% endif %}>11 Years</option>
+        <option value="12 years" {% if data.years == '12 years' %} selected {% endif %}>12 Years</option>
+        <option value="13 years" {% if data.years == '13 years' %} selected {% endif %}>13 Years</option>
+        <option value="14 years" {% if data.years == '14 years' %} selected {% endif %}>14 Years</option>
+        <option value="15 years" {% if data.years == '15 years' %} selected {% endif %}>15 Years</option>
+        <option value="16 years" {% if data.years == '16 years' %} selected {% endif %}>16 Years</option>
+        <option value="17 years" {% if data.years == '17 years' %} selected {% endif %}>17 Years</option>
+        <option value="18 years" {% if data.years == '18 years' %} selected {% endif %}>18 Years</option>
+        <option value="19 years" {% if data.years == '19 years' %} selected {% endif %}>19 Years</option>
+        <option value="20 years" {% if data.years == '20 years' %} selected {% endif %}>20 Years</option>
+        <option value="21 years" {% if data.years == '21 years' %} selected {% endif %}>20+ Years</option>
+    </select>
+
+    <select name="years">
+        <option  value="" disabled selected>Select Month</option>
+        <option value="1 month" {% if data.years == '1 month' %} selected {% endif %}>1 month</option>
+        <option value="2 months" {% if data.years == '2 months' %} selected {% endif %}>2 months</option>
+        <option value="3 months" {% if data.years == '3 months' %} selected {% endif %}>3 months</option>
+        <option value="4 months" {% if data.years == '4 months' %} selected {% endif %}>4 months</option>
+        <option value="5 months" {% if data.years == '5 months' %} selected {% endif %}>5 months</option>
+        <option value="6 months" {% if data.years == '6 months' %} selected {% endif %}>6 months</option>
+        <option value="7 months" {% if data.years == '7 months' %} selected {% endif %}>7 months</option>
+        <option value="8 months" {% if data.years == '8 months' %} selected {% endif %}>8 months</option>
+        <option value="9 months" {% if data.years == '9 months' %} selected {% endif %}>9 months</option>
+        <option value="10 months" {% if data.years == '10 months' %} selected {% endif %}>10 months</option>
+        <option value="11 months" {% if data.years == '11 months' %} selected {% endif %}>11 months</option>
+    </select><br><br>
+
+    <label>Current company name</label>
+    <input type="text" name="Currentcompanyname" value="{{data.currentcompanyname}}"><br><br>
+
+    <label>Current job title</label>
+    <input type="text" name="Currentjobtitle" value="{{data.jobtitle}}"><br><br>
+
+    <label>Joining date</label>
+    <input type="date" name="Joiningdate" value="{{data.joiningdate}}"><br><br>
+
+    <label>Current salary</label>
+    <input type="number" name="Currentsalary" value="{{data.currentsalary}}"><br><br>
+
+    <label>Skills used</label>
+    <input type="text" name="Skillsused" value="{{data.skillsused}}"><br><br>
+
+    <label>Job profile</label>
+    <textarea name="Jobprofile">{{data.jobprofile}}</textarea><br><br>
+
+    <label>Notice period</label>
+    <select name="Noticeperiod">
+        <option value="15 Days or Less" {% if data.noticeperiod == '15 Days or Less' %} selected {% endif %}>15 Days or Less</option>
+        <option value="1 month" {% if data.noticeperiod == '1 month' %} selected {% endif %}>1 month</option>
+        <option value="2 months" {% if data.noticeperiod == '2 months' %} selected {% endif %}>2 months</option>
+        <option value="3 months" {% if data.noticeperiod == '3 months' %} selected {% endif %}>3 months</option>
+        <option value="More than 3 month" {% if data.noticeperiod == 'More than 3 month' %} selected {% endif %}>More than 3 months</option>
+    </select><br><br>
+<div style="display:flex;justify-content:center;">
+    <input type="submit" value="upload">
+</div>
+
+</form>
+</body>
+</html>

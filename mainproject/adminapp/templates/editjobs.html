@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Upload Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"], input[type="file"], input[type="email"], select, textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        input[type="submit"] {
+            padding: 10px 15px;
+            background-color: rgb(21, 123, 164);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Job Upload Form</h2>
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+            <label for="companyname">Company Name</label>
+            <input type="text" name="companyname" id="companyname" required value="{{data.companyname}}">
+
+            <label for="companylogo">Company Logo</label>
+            <input type="file" name="companylogo" id="companylogo" required value="{{data.companylogo.url}}">
+            <div>
+                 <img src="{{data.companylogo.url}}" style="height:100px;">
+
+            </div>
+
+
+            <label for="jobtitle">Job Title</label>
+            <input type="text" id="jobtitle" name="jobtitle" required value="{{data.jobtitle}}">
+
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" required value="{{data.location}}">
+
+            <label for="description">Job Description</label>
+            <textarea id="description" name="description" rows="4" cols="50" required>{{data.JobDescription}}</textarea>
+
+            <label for="salary">Salary Range</label>
+            <input type="text" id="salary" name="salary" value="{{data.salary}}">
+
+            <label for="employment-type">Employment Type</label>
+            <select id="employment-type" name="employment-type" required>
+                <option value="full-time">Full-Time</option>
+                <option value="part-time">Part-Time</option>
+                <option value="contract">Contract</option>
+                <option value="internship">Internship</option>
+            </select>
+
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+                <option value="">Select Category</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Education">Education</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Sales">Sales</option>
+                <option value="Customer Service">Customer Service</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Creative Arts">Creative Arts</option>
+            </select>
+
+            <label for="schedule">Schedule</label>
+            <select id="schedule" name="schedule" required>
+                <option value="day-shift">Day shift</option>
+                <option value="night-shift">Night shift</option>
+                <option value="flexible">Flexible</option>
+            </select>
+
+            <label for="requirements">Requirements</label>
+            <textarea id="requirements" name="requirements" rows="4" cols="50" required>{{data.Requirements}}</textarea>
+
+            <label for="additionalinformation">Additional Information</label>
+            <textarea id="additionalinformation" name="additionalinformation" rows="4" cols="50" required>{{data.Additionalinformation}}</textarea>
+
+            <label for="contact-email">Contact Email</label>
+            <input type="email" id="contact-email" name="contact-email" required value="{{data.contactemail}}">
+
+            <input type="submit" value="Update Job">
+        </form>
+    </div>
+</body>
+</html>

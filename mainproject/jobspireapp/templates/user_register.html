@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .form-container h2 {
+            color:rgb(21, 123, 164);
+            margin-bottom: 30px;
+        }
+
+        .form-container label {
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .form-container input[type=text],
+        .form-container input[type=email],
+        .form-container input[type=password],
+        .form-container input[type=tel]{
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-container input[type=submit] {
+            background-color:rgb(21, 123, 164);
+            color: #fff;
+            border: none;
+            padding: 12px 40px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        label{
+        font-weight:700;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="cpassword">Confirm Password</label>
+            <input type="password" id="cpassword" name="cpassword" required>
+
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+
+            <label>Work Status</label>
+            Experienced<input type="radio" id="experienced" name="workstatus" value="experienced" required>
+            Fresher<input type="radio" id="fresher" name="workstatus" value="fresher" required>
+
+
+            <label for="city">Current City</label>
+            <input type="text" id="city" name="city" required>
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
